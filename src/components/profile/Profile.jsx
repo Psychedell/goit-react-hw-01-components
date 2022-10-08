@@ -1,33 +1,41 @@
 import PropTypes from 'prop-types'
-import user from './user.json'
 
-export const Profile = (props) => {
-    return <div class="profile">
-  <div class="description">
+export const Profile = ({name, tag, location, avatar, stats}) => {
+    return <div className="profile">
+  <div className="description">
     <img
-      src="https://cdn-icons-png.flaticon.com/512/1077/1077012.png"
-      alt="User avatar"
-      class="avatar"
+      src={avatar}
+      alt={name}
+      className="avatar"
     />
-    <p class="name">Petra Marica</p>
-    <p class="tag">@pmarica</p>
-    <p class="location">Salvador, Brasil</p>
-  </div>
-
-  <ul class="stats">
+    <p className="name">{name}</p>
+    <p className="tag">@{tag}</p>
+    <p className="location">{location}</p>
+      </div>
+       <ul className="stats">
     <li>
-      <span class="label">Followers</span>
-      <span class="quantity">1000</span>
+      <span className="label">Followers</span>
+      <span className="quantity">{stats.followers}</span>
     </li>
     <li>
-      <span class="label">Views</span>
-      <span class="quantity">2000</span>
+      <span className="label">Views</span>
+      <span className="quantity">{stats.views}</span>
     </li>
     <li>
-      <span class="label">Likes</span>
-      <span class="quantity">3000</span>
+      <span className="label">Likes</span>
+      <span className="quantity">{stats.likes}</span>
     </li>
   </ul>
 </div>
 }
+
+Profile.propTypes = {
+  stats: PropTypes.object.isRequired,
+  avatar: PropTypes.string.isRequired,
+  location: PropTypes.string.isRequired,
+  tag: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+};
+
+
 
