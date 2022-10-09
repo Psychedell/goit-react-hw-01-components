@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types'
 import { FriendListItem } from './FriendListItem'
-import { Wrapper, FriendListUl } from './Friends.styled'
+import { FriendListUl } from './Friends.styled'
 
 
 export const FriendList = ({ friends }) => {
